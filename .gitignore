@@ -1,6 +1,6 @@
 #Ignoring Yolov3 file due to large size
-*.yolov3.weights
-dependent files/yolov3.weights
+*.weights
+dependent-files/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

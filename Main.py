@@ -108,7 +108,7 @@ while cap.isOpened():
     net.setInput(blob)
     outs = net.forward(getOutputsNames(net))
     postprocess(frame, outs)
-    print("The number of vehicles on road are: " + str(count))
+    print("Lane 02 " + str(count))
     # store the output image
     # cv.imwrite(outputFile, frame.astype(np.uint8))
     # show the output image

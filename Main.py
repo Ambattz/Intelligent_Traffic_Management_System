@@ -88,7 +88,7 @@ net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv.dnn.DNN_TARGET_CPU)
 # if using image then make the output file a jpeg file.
-outputFile = "output\result.mp4"
+outputFile = "output\result.avi"
 # Process inputs
 # winName = 'DL OD with OpenCV'
 # cv.namedWindow(winName, cv.WINDOW_NORMAL)

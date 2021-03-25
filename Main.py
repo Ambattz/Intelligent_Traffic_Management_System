@@ -333,21 +333,37 @@ a.append(count1)
 a.append(count2)
 a.append(count3)
 
+#setting timer for each lane
+def time(x):
+    t=0
+    if x>30:
+        t=50
+    elif (x>20 and x<30):
+        t=40
+    elif (x<20 and x>10):
+        t=30
+    else:
+        t=20
+    return t
 
-l=0
-for i in range(1,4):
-    if a[i]>l:
-        l=a[i]
-        pos=i+1
-t=0
-if l>20:
-    t=30
-elif (l>10 and l<20):
-    t=20
-elif l<10:
-    t=10
-print(" Lane {0} has maximum density".format(pos))
-print(" Green signal time ="+ str(t)+" seconds")
+t1 = time(a[0])
+t2 = time(a[1])
+t3 = time(a[2])
+t4 = time(a[3])
+
+timerlist = []
+timerlist.append(t1)
+timerlist.append(t2)
+timerlist.append(t3)
+timerlist.append(t4)
+
+for i in range(4):
+    print("Lane {} will open for {} seconds".format(i+1,timerlist[i]))
+
+
+
+
+
     # store the output image
     # cv.imwrite(outputFile, frame.astype(np.uint8))
     # show the output image

@@ -282,6 +282,29 @@ def itms():
     # cv.namedWindow(winName, cv.WINDOW_NORMAL)
     # cv.resizeWindow(winName, 1000, 1000)
     # if using an image, put the path of the image over here.
+        
+        camera_port = 0
+        cam = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
+        return_value, image = cam.read()
+
+        cv.imwrite("input\lane1.png", image)
+
+        cam1 = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
+        return_value, image = cam1.read()
+
+        cv.imwrite("input\lane2.png", image)
+
+        cam2 = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
+        return_value, image = cam2.read()
+
+        cv.imwrite("input\lane3.png", image)
+
+        cam3 = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
+        return_value, image = cam3.read()
+        cv.imwrite("input\lane4.png", image)
+
+
+
         cap = cv.imread("input\lane1.png")
         cv.imwrite(outputFile,cap)
         cap1 = cv.imread("input\lane2.png")
@@ -291,7 +314,6 @@ def itms():
         cap3 = cv.imread("input\lane4.png")
         cv.imwrite(outputFile3,cap3)
 
-        
 
     # get frame from video
         # Create a 4D blob from a frame

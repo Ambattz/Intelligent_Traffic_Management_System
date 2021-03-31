@@ -283,25 +283,25 @@ def itms():
     # cv.resizeWindow(winName, 1000, 1000)
     # if using an image, put the path of the image over here.
         
-        camera_port = 0
-        cam = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
-        return_value, image = cam.read()
+        # camera_port = 0
+        # cam = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
+        # return_value, image = cam.read()
 
-        cv.imwrite("input\lane1.png", image)
+        # cv.imwrite("input\lane1.png", image)
 
-        cam1 = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
-        return_value, image = cam1.read()
+        # cam1 = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
+        # return_value, image = cam1.read()
 
-        cv.imwrite("input\lane2.png", image)
+        # cv.imwrite("input\lane2.png", image)
 
-        cam2 = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
-        return_value, image = cam2.read()
+        # cam2 = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
+        # return_value, image = cam2.read()
 
-        cv.imwrite("input\lane3.png", image)
+        # cv.imwrite("input\lane3.png", image)
 
-        cam3 = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
-        return_value, image = cam3.read()
-        cv.imwrite("input\lane4.png", image)
+        # cam3 = cv.VideoCapture(camera_port, cv.CAP_DSHOW)
+        # return_value, image = cam3.read()
+        # cv.imwrite("input\lane4.png", image)
 
 
 
@@ -354,7 +354,7 @@ def itms():
     def timing(x):
         t=0
         if x>30:
-            t=50
+            t=60
         elif (x>20 and x<30):
             t=40
         elif (x<20 and x>10):

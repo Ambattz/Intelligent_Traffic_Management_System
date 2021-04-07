@@ -288,6 +288,8 @@ def itms():
 
         template = cv2.imread('filled-star-of-life.jpg')
 
+
+    
         # Analyzes a frame or image and updates poi's
         # returns count and locations of emergency vehicles
         def analyzeFrame(image, is_video):

@@ -390,15 +390,19 @@ def itms():
     if emergency_vehicle(cap1) == 0:
         print("Emergency vehicle detected in lane 1")
         print("GREEN SIGNAL ON FOR 15 SECONDS ON LANE 1")
+        print('')
     if emergency_vehicle(cap2) == 0:
         print("Emergency vehicle detected in lane 2")
         print("GREEN SIGNAL ON FOR 15 SECONDS ON LANE 2")
+        print('')
     if emergency_vehicle(cap3) == 0:
         print("Emergency vehicle detected in lane 3")
         print("GREEN SIGNAL ON FOR 15 SECONDS ON LANE 3")
+        print('')
     if emergency_vehicle(cap4) == 0:
         print("Emergency vehicle detected in lane 4")
         print("GREEN SIGNAL ON FOR 15 SECONDS ON LANE 4")
+        print('')
 
     c1 = density(cap1)
     cv2.imwrite(outputFile, cap1)

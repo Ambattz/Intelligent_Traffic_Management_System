@@ -1,8 +1,7 @@
-# import the necessary packages
 import numpy as np
-#import argparse
 import cv2
 import time
+import imutils
 
 from imutils.object_detection import non_max_suppression
 import argparse
@@ -14,16 +13,6 @@ if sys.version_info >= (3, 0):
 	from queue import Queue
 else:
 	from Queue import Queue
-
-# construct the argument parser and parse the arguments
-# ap = argparse.ArgumentParser()
-# ap.add_argument('-i', '--image', required=True, help='path to the input image')
-# # ap.add_argument('-p', '--prototxt', default='/Users/siddhantbansal/Desktop/Python/Personal_Projects/Object_Detection/MobileNetSSD_deploy.prototxt.txt', help='path to Caffe deploy prototxt file')
-# # ap.add_argument('-m', '--model', default='/Users/siddhantbansal/Desktop/Python/Personal_Projects/Object_Detection/MobileNetSSD_deploy.caffemodel', help='path to the Caffe pre-trained model')
-# ap.add_argument('-p', '--prototxt', required=True, help='path to Caffe deploy prototxt file')
-# ap.add_argument('-m', '--model', required=True, help='path to the Caffe pre-trained model')
-# ap.add_argument('-c', '--confidence', type=float, default=0.2, help='minimum probability to filter weak detections')
-# args = vars(ap.parse_args())
 
 # initialize the list of class labels MobileNet SSD was trained to
 # detect, then generate a set of bounding box colors for each class
@@ -43,9 +32,18 @@ net = cv2.dnn.readNetFromCaffe(prototxt_path, model_path)
 # by resizing to a fixed 300x300 pixels and then normalizing it
 # (note: normalization is done via the authors of the MobileNet SSD
 # implementation)
+tf1 = 1000
+tf2 = 1000
+tf3 = 1000
+tf4 = 1000
 
+i = 0
+j = 0
+k = 0
+l = 0
 
 def itms():
+    
     def density(image):
         count = 0
         (h, w) = image.shape[:2]
@@ -68,7 +66,6 @@ def itms():
                 idx = int(detections[0, 0, i, 1])
                 box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
                 (startX, startY, endX, endY) = box.astype('int')
-
                 # display the prediction
                 label = '{}: {:.2f}%'.format(CLASSES[idx], confidence * 100)
                 count = count + 1
@@ -81,14 +78,12 @@ def itms():
 
     def timing(x):
         t = 0
-        if x > 30:
-            t = 60
-        elif (x > 20 and x < 30):
-            t = 40
-        elif (x < 20 and x > 10):
-            t = 30
+        if x >= 3:
+            t = 3
+        elif x == 2:
+            t = 2
         else:
-            t = 5
+            t = 1
         return t
 
     def emergency_vehicle(image):
@@ -341,15 +336,7 @@ def itms():
                 
             return count, points
 
-        # construct the argument parse and parse the arguments
-        #ap = argparse.ArgumentParser()
-        # ap.add_argument("-l", "--list", required=True,
-        # 	help="path to input image")
-        # ap.add_argument("-c", "--confidence", type=float, default=0.2,
-        # 	help="minimum probability to filter weak detections")
-        # args = vars(ap.parse_args())
-
-
+        
         # initialize the list of class labels MobileNet SSD was trained to
         # detect, then generate a set of bounding box colors for each class
         CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
@@ -360,63 +347,85 @@ def itms():
 
         net = cv2.dnn.readNetFromCaffe("dependent-files/MobileNetSSD_deploy.prototxt", "dependent-files/MobileNetSSD_deploy.caffemodel")
 
-        # load the input image and construct an input blob for the image
-        # by resizing to a fixed 300x300 pixels and then normalizing it
-        # (note: normalization is done via the authors of the MobileNet SSD
-        # implementation)
-
-        #main loop
-
-
         count, points = analyzeFrame(image, False)
         if count >= 1:
             return 0
         else:
             return 1
-            
 
-        # outputFile = "result.jpg"
-        # cv2.imwrite(outputFile, cap)
-        
 
-    outputFile = "output/result1.png"
-    outputFile1 = "output/result2.png"
-    outputFile2 = "output/result3.png"
-    outputFile3 = "output/result4.png"
+    global tf1
+    global tf2
+    global tf3
+    global tf4        
 
-    cap1 = cv2.imread("input/lane1.png")
-    cap2 = cv2.imread("input/lane2.png")
-    cap3 = cv2.imread("input/lane3.png")
-    cap4 = cv2.imread("input/lane4.png")
+    global i
+    global j
+    global k
+    global l
+    outputFile1 = "output/lane1/result{}.png".format(i)
+    i = i + 1
+    outputFile2 = "output/lane2/result{}.png".format(j)
+    j = j + 1
+    outputFile3 = "output/lane3/result{}.png".format(k)
+    k = k + 1
+    outputFile4 = "output/lane4/result{}.png".format(l)
+    l = l + 1
 
-    if emergency_vehicle(cap1) == 0:
+    cap1 = cv2.VideoCapture("input/lane1.mp4")
+    cap1.set(cv2.CAP_PROP_POS_MSEC, tf1)
+    ret1, frame1 = cap1.read()
+    frame1 = imutils.resize(frame1, width=400)
+    frame1 = frame1[50:300,50:300]
+
+    cap2 = cv2.VideoCapture("input/lane2.mp4")
+    cap2.set(cv2.CAP_PROP_POS_MSEC, tf2)
+    ret2, frame2 = cap2.read()
+    frame2 = imutils.resize(frame2, width=400)
+    frame2 = frame2[50:300,50:300]
+
+    cap3 = cv2.VideoCapture("input/lane3.mp4")
+    cap3.set(cv2.CAP_PROP_POS_MSEC, tf3)
+    ret3, frame3 = cap3.read()
+    frame3 = imutils.resize(frame3, width=400)
+    frame3 = frame3[50:300,50:300]
+
+    cap4 = cv2.VideoCapture("input/lane4.mp4")
+    cap4.set(cv2.CAP_PROP_POS_MSEC, tf4)
+    ret4, frame4 = cap4.read()
+    frame4 = imutils.resize(frame4, width=400)
+    frame4 = frame4[50:300,50:300]
+
+    if emergency_vehicle(frame1) == 0:
         print("Emergency vehicle detected in lane 1")
         print("GREEN SIGNAL ON FOR 15 SECONDS ON LANE 1")
         print('')
-    if emergency_vehicle(cap2) == 0:
+    if emergency_vehicle(frame2) == 0:
         print("Emergency vehicle detected in lane 2")
         print("GREEN SIGNAL ON FOR 15 SECONDS ON LANE 2")
         print('')
-    if emergency_vehicle(cap3) == 0:
+    if emergency_vehicle(frame3) == 0:
         print("Emergency vehicle detected in lane 3")
         print("GREEN SIGNAL ON FOR 15 SECONDS ON LANE 3")
         print('')
-    if emergency_vehicle(cap4) == 0:
+    if emergency_vehicle(frame4) == 0:
         print("Emergency vehicle detected in lane 4")
         print("GREEN SIGNAL ON FOR 15 SECONDS ON LANE 4")
         print('')
 
-    c1 = density(cap1)
-    cv2.imwrite(outputFile, cap1)
+    c1 = density(frame1)
+    cv2.imwrite(outputFile1, frame1)
 
-    c2 = density(cap2)
-    cv2.imwrite(outputFile1, cap2)
+    c2 = density(frame2)
+    cv2.imwrite(outputFile2, frame2)
 
-    c3 = density(cap3)
-    cv2.imwrite(outputFile2, cap3)
+    c3 = density(frame3)
+    cv2.imwrite(outputFile3, frame3)
 
-    c4 = density(cap4)
-    cv2.imwrite(outputFile3, cap4)
+    c4 = density(frame4)
+    cv2.imwrite(outputFile4, frame4)
+
+    
 
     print("Vehicle Count lane no 1 " + str(c1))
     t1 = timing(c1)
@@ -426,9 +435,12 @@ def itms():
     time.sleep(2)
     print("Red signal ON")
     print("")
-    density(cap2)
-    density(cap3)
-    density(cap4)
+    tf1 = tf1 + (t1 * 1000) + 2000
+    
+    # density(frame2)
+    # density(frame3)
+    # density(frame4)
+    
     print("Vehicle Count lane no 2 " + str(c2))
     t2 = timing(c2)
     print("Green signal ON for {} seconds".format(t2))
@@ -437,8 +449,11 @@ def itms():
     time.sleep(2)
     print("Red signal ON")
     print("")
-    density(cap3)
-    density(cap4)
+    tf2 = tf2 + (t2 * 1000) + 2
+
+    # density(frame3)
+    # density(frame4)
+
     print("Vehicle Count lane no 3 " + str(c3))
     t3 = timing(c3)
     print("Green signal ON for {} seconds".format(t3))
@@ -447,7 +462,9 @@ def itms():
     time.sleep(2)
     print("Red signal ON")
     print("")
-    density(cap4)
+    tf3 = tf3 + (t3 * 1000) + 2
+
+    #density(cap4)
     print("Vehicle Count Lane no 4 " + str(c4))
     t4 = timing(c4)
     print("Green signal ON for {} seconds".format(t4))
@@ -456,8 +473,10 @@ def itms():
     time.sleep(2)
     print("Red signal ON")
     print("")
+    tf4 = tf4 + (t4 * 1000) + 2
+    
 
+    
     itms()
-
 
 itms()

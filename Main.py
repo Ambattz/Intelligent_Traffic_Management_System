@@ -48,13 +48,15 @@ def itms():
                 (startX, startY, endX, endY) = box.astype('int')
 
                 # display the prediction
-                label = '{}: {:.2f}%'.format(CLASSES[idx], confidence * 100)
-                count = count + 1
-                cv2.rectangle(image, (startX, startY),
-                              (endX, endY), COLORS[idx], 2)
-                y = startY - 15 if startY - 15 > 15 else startY + 15
-                cv2.putText(image, label, (startX, y),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
+                if (CLASSES[idx] == "bus" or CLASSES[idx] == "car" or CLASSES[idx] == "motorbike"):
+
+                    label = '{}: {:.2f}%'.format(CLASSES[idx], confidence * 100)
+                    count = count + 1
+                    cv2.rectangle(image, (startX, startY),
+                                (endX, endY), COLORS[idx], 2)
+                    y = startY - 15 if startY - 15 > 15 else startY + 15
+                    cv2.putText(image, label, (startX, y),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
         return count
 
     

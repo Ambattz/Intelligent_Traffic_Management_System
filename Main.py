@@ -86,14 +86,14 @@ def itms():
     c4 = density(cap4)
     cv2.imwrite(outputFile3, cap4)
 
-    # print("Vehicle Count lane no 1 " + str(c1))
-    # t1 = t1 + 1
-    # print("Green signal ON for {} seconds".format(t1))
-    # time.sleep(t1)
-    # print("Yellow signal ON for 2 seconds")
-    # time.sleep(2)
-    # print("Red signal ON")
-    # print("")
+    print("Vehicle Count lane no 1 " + str(c1))
+    t1 = t1 + 1
+    print("Green signal ON for {} seconds".format(t1))
+    time.sleep(t1)
+    print("Yellow signal ON for 2 seconds")
+    time.sleep(2)
+    print("Red signal ON")
+    print("")
     
     print("Vehicle Count lane no 2 " + str(c2))
     t2 = c2 + 1

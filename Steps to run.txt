@@ -1,0 +1,6 @@
+Steps to run the website:-
+
+1. open Back_end folder in vscode
+2. run: "npm run start" in one terminal
+3. in parallel, open another terminal and run: "node append.js"   
+    (folder: Back_end -> config)

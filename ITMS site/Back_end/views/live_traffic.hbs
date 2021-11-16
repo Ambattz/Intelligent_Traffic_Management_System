@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="/stylesheets/live_traffic_background.css">
+
+<section>
+
+    <input type="hidden" id="Lane1" value={{c1}} />
+    <input type="hidden" id="Lane2" value={{c2}} />
+    <input type="hidden" id="Lane3" value={{c3}} />
+    <input type="hidden" id="Lane4" value={{c4}} />
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+
+        count_01 = document.getElementById("Lane1").value;
+        count_02 = document.getElementById("Lane2").value;
+        count_03 = document.getElementById("Lane3").value;
+        count_04 = document.getElementById("Lane4").value;
+
+        var markers = [
+            {
+                "title": 'LANE 1',
+                "lat": '9.379354015965525',
+                "lng": '76.57047517043526',
+                "description": 'Lane 1: ' + count_01
+            },
+            {
+                "title": 'LANE 2',
+                "lat": '9.38078985658993',
+                "lng": '76.57478706858036',
+                "description": 'Lane 2: ' + count_02
+            },
+            {
+                "title": 'LANE 3',
+                "lat": '9.38681169681476',
+                "lng": '76.5746661252479',
+                "description": 'Lane 3: ' + count_03
+            },
+            {
+                "title": 'LANE 4',
+                "lat": '9.384772998061294',
+                "lng": '76.57712632895766',
+                "description": 'Lane 4: ' + count_04
+            }
+        ];
+        window.onload = function () {
+            LoadMap();
+        }
+        function LoadMap() {
+            var mapOptions = {
+                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+
+            //Create and open InfoWindow.
+            var infoWindow = new google.maps.InfoWindow();
+
+            for (var i = 0; i < markers.length; i++) {
+                var data = markers[i];
+                var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: data.title
+                });
+
+                //Attach click event to the marker.
+                (function (marker, data) {
+                    google.maps.event.addListener(marker, "click", function (e) {
+                        //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                        infoWindow.setContent("Updated:")
+                        infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.description + "</div>");
+                        infoWindow.open(map, marker);
+                    });
+                })(marker, data);
+            }
+        }
+        google.setOnLoadCallback(LoadMap);
+    </script>
+    <div id="dvMap" style="width: 1200px; height: 550px; margin: 0 auto; margin-top:10px; margin: bottom 10px;">
+    </div>
+
+</section>

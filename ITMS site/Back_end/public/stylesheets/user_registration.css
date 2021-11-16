@@ -1,0 +1,105 @@
+.header {
+    width: 100%;
+    height: 85px;
+    background-color: mediumpurple;
+    /* float: left; */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    width: 50%;
+    padding-top: 33px;
+    float: left;
+}
+
+.login-content {
+    width: 50%;
+    float: left;
+    padding-top: 15px;
+}
+
+.logo-text {
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-left: 170px;
+}
+
+.login-label {
+    color: white;
+    font-size: 11px;
+    font-weight: bolder;
+}
+
+.login-controls {
+    margin-left: 34px;
+}
+
+.forgotten {
+    color: white;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.submit {
+    background-color: darkslateblue;
+    font-weight: bold;
+    color: white;
+    border-color: black;
+    cursor: pointer;
+}
+
+
+/* hover is an action; action is represented by ":" */
+
+.submit:hover {
+    background-color: thistle;
+}
+
+.main-body {
+    /* float: left; */
+    background: linear-gradient(navajowhite, white);
+    width: 100%;
+    height: 500px;
+    /* display: flexbox; */
+}
+
+.main-body div {
+    float: left;
+    clear: none;
+}
+
+.left-section {
+    width: 45%;
+    height: 500px;
+    /* float: left;  */
+    /* background: linear-gradient(white,#D3D8E8); */
+    font-weight: bold;
+    padding-left: 50px;
+    padding-top: 52px;
+    font-size: 41px;
+}
+
+
+/* rectify the mismatch b/w the size of left and right section, eventhough 50% is given to both */
+
+.right-section {
+    width: 45%;
+    height: 500px;
+    font-weight: bold;
+    padding-left: 50px;
+    padding-top: 93px;
+    font-size: 41px;
+    /* float: left; */
+    /* background: linear-gradient(white,#D3D8E8); */
+}
+
+.fb-connect_image {
+    width: 581px;
+}

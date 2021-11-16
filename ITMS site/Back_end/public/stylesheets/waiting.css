@@ -1,0 +1,125 @@
+body {
+    background-color: #fff !important;
+}
+
+.text-white {
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+
+h3.h3 {
+    text-align: center;
+    padding: 1.5em 0em 2em 0em;
+    text-transform: capitalize;
+    font-size: 1.5em;
+}
+
+.container-fluid {
+    padding: 2em 0em 4em 0em;
+    background: linear-gradient(to right, #7474bf, #348ac7);
+}
+
+.container {
+    padding: 2em 0em 5em 0em;
+}
+
+.bg-1 {
+    background: linear-gradient(to right, #7b4379, #dc2430);
+}
+
+.bg-2 {
+    background: #ABAD5D;
+}
+
+.bg-3 {
+    background: #1ABC9C;
+}
+
+
+/********************  Preloader Demo-5 *******************/
+
+.loader5 {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    position: relative
+}
+
+.loader5 .loader-inner {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: absolute;
+    transition: all .8s ease-in-out
+}
+
+.loader5 .box-1 {
+    background: #89fc00;
+    top: 125px;
+    right: 0;
+    -webkit-animation: loading-1 2.2s infinite;
+    animation: loading-1 2.2s infinite
+}
+
+.loader5 .box-2 {
+    background: #dc0073;
+    top: 125px;
+    -webkit-animation: loading-2 2.2s infinite;
+    animation: loading-2 2.2s infinite
+}
+
+.loader5 .box-3 {
+    background: #1be7ff;
+    top: 0;
+    left: 125px;
+    -webkit-animation: loading-3 2.2s infinite;
+    animation: loading-3 2.2s infinite
+}
+
+.loader5 .box-4 {
+    background: #ffb800;
+    bottom: 0;
+    left: 125px;
+    -webkit-animation: loading-4 2.2s infinite;
+    animation: loading-4 2.2s infinite
+}
+
+@keyframes loading-1 {
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(-250px)
+    }
+}
+
+@keyframes loading-2 {
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(250px)
+    }
+}
+
+@keyframes loading-3 {
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(250px)
+    }
+}
+
+@keyframes loading-4 {
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(-250px)
+    }
+}

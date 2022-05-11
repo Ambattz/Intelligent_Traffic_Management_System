@@ -95,37 +95,18 @@ EMERGENCY VEHICLE PREEMPTION
 * Train the model again with images of ambulance.
 * The lane where emergency vehicle is detected will get priority
 
-![image](https://user-images.githubusercontent.com/69767685/141916034-4de04125-bc8b-47b2-9c05-0ae87558668d.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141916963-218022a8-ce83-4730-85c7-0696bb98b68c.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141917397-0296f507-2852-4499-a6e2-184f1b9e34c4.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141917861-2e5724a9-2b92-4558-a204-c5c411206903.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141918212-f671ef9c-bd01-4b38-ad9f-46764c11cdad.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141918353-a4d1f569-8be0-4cb1-851e-00b191ea320a.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141918611-45b25324-cdbe-4bda-8c10-a911137767e1.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141918703-a515b4ec-1a74-47b5-bbef-667509970724.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141918806-f9080e4e-eb0d-4f2a-8e11-c200a8aa36ad.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141918932-5ece43bb-dd4e-4253-ae89-f22423e93c86.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141919060-cad5441a-39bd-4ce8-a660-11adb749712b.png)
+ .         | . |.
+:-------------------------:|:-------------------------:|:-------------------------:
+![image](https://user-images.githubusercontent.com/69767685/141916034-4de04125-bc8b-47b2-9c05-0ae87558668d.png)|![image](https://user-images.githubusercontent.com/69767685/141916963-218022a8-ce83-4730-85c7-0696bb98b68c.png)|![image](https://user-images.githubusercontent.com/69767685/141917397-0296f507-2852-4499-a6e2-184f1b9e34c4.png)
+![image](https://user-images.githubusercontent.com/69767685/141917861-2e5724a9-2b92-4558-a204-c5c411206903.png)|![image](https://user-images.githubusercontent.com/69767685/141918212-f671ef9c-bd01-4b38-ad9f-46764c11cdad.png)|![image](https://user-images.githubusercontent.com/69767685/141918353-a4d1f569-8be0-4cb1-851e-00b191ea320a.png)
+![image](https://user-images.githubusercontent.com/69767685/141918611-45b25324-cdbe-4bda-8c10-a911137767e1.png)|![image](https://user-images.githubusercontent.com/69767685/141918703-a515b4ec-1a74-47b5-bbef-667509970724.png)|![image](https://user-images.githubusercontent.com/69767685/141918806-f9080e4e-eb0d-4f2a-8e11-c200a8aa36ad.png)
+![image](https://user-images.githubusercontent.com/69767685/141918932-5ece43bb-dd4e-4253-ae89-f22423e93c86.png)|![image](https://user-images.githubusercontent.com/69767685/141919060-cad5441a-39bd-4ce8-a660-11adb749712b.png)
 
 # RESULT
-
-![image](https://user-images.githubusercontent.com/69767685/141919461-7f92afd4-d1e2-411e-a7a8-e25d2e766569.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141919644-23f6cb2e-9c3c-4b6f-b282-6e3cd0980d26.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141919793-5fe9b199-d07d-43bf-a02c-5d19aa65a019.png)
-
-![image](https://user-images.githubusercontent.com/69767685/141919898-12f304b8-a441-42bd-ae14-037dba810eff.png)
+ .         | . 
+:-------------------------:|:-------------------------:
+![image](https://user-images.githubusercontent.com/69767685/141919461-7f92afd4-d1e2-411e-a7a8-e25d2e766569.png)|![image](https://user-images.githubusercontent.com/69767685/141919644-23f6cb2e-9c3c-4b6f-b282-6e3cd0980d26.png)
+![image](https://user-images.githubusercontent.com/69767685/141919793-5fe9b199-d07d-43bf-a02c-5d19aa65a019.png)|![image](https://user-images.githubusercontent.com/69767685/141919898-12f304b8-a441-42bd-ae14-037dba810eff.png)
 
 # CONCLUSION
 
